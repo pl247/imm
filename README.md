@@ -2,9 +2,9 @@
 Directions for using Terraform with IMM demo
 --------------------------------------------
 
-Go into the SecretKey.txt file and put your secretly there (see api_key below).
+Create a file called SecretKey.txt file and put your secret key generated from Intersight there (see api_key below).
 
-Go into the variables.tf file and change the following variables/MOIDs to match yours:
+Edit variables.tf file and change the following variables/MOIDs to match yours:
 
 organization - Your intersight account will have a default organization. One way to find the 
 organization is to go to Gear>Settings>Organizations> and click the default org. Get the MOID 
@@ -25,6 +25,3 @@ https://intersight.com/an/pool/pools/abstract/ippool/60c3d28c6962752d30d3b964/vi
 
 api_key - Generate an API key in your intersight Gear>Settings>API Keys>Generate API Key using version 2. 
 After clicking Generate, you'll be presented with the API key and Secret Key. Put the Secret Key into the file SecretKey.txt
-
-For more great info on using TF w/ Intersight see the following GVE blog:
-https://cisco.sharepoint.com/sites/GVEBlogs/SitePages/Bits%20and%20Bytes/Terraform-and-intersight.aspx?web=1
