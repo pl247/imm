@@ -19,9 +19,7 @@ https://intersight.com/an/pool/pools/abstract/macpool/609edfa36962752d30ce1434/v
 ip_pool_moid - Create an IP pool in Intersight and get the MOID by clicking on the pool 
 in Intersight and copy the hex ID that comes after ippool. For example if this is the URL 
 of your IP pool in intersight, then the MOID is 60c3d28c6962752d30d3b964:
-
 https://intersight.com/an/pool/pools/abstract/ippool/60c3d28c6962752d30d3b964/view/?$currentPage=1&$pageSize=10
-
 
 api_key - Generate an API key in your intersight Gear>Settings>API Keys>Generate API Key using version 2. 
 After clicking Generate, you'll be presented with the API key and Secret Key. Put the Secret Key into the file SecretKey.txt
