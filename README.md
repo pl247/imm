@@ -1,5 +1,5 @@
 
-Directions for using Terraform with IMM demo
+Directions for using Terraform open source with IMM demo
 --------------------------------------------
 
 Create a file called SecretKey.txt file and put your secret key generated from Intersight there (see api_key below).

@@ -1,5 +1,5 @@
 terraform {
-    required_version = "~> 0.13"
+    required_version = "~> 1.0.3"
     required_providers {
         intersight = {
             source = "CiscoDevNet/intersight"
@@ -31,7 +31,7 @@ module "intersight_policy_bundle" {
   imc_access_pool = var.ip_pool_moid
 
   # every policy created will have this prefix in its name
-  policy_prefix = "bdc"
+  policy_prefix = "pdc"
   description   = "Created by Terraform"
 
   # Fabric Interconnect 6454 config specifics
