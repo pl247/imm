@@ -42,7 +42,7 @@ module "intersight_policy_bundle" {
 
   fc_port_count_6454 = 4
 
-  imc_access_vlan    = 1020
+  imc_access_vlan    = 998
   imc_admin_password = "Cisco123"
 
   ntp_servers = ["ca.pool.ntp.org"]
