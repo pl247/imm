@@ -3,7 +3,7 @@ terraform {
     required_providers {
         intersight = {
             source = "CiscoDevNet/intersight"
-            version = "1.0.8"
+            version = ">=1.0.20"
         }
     }
 }
@@ -23,23 +23,21 @@ output "org_default_moid" {
 }
 
 module "intersight_policy_bundle" {
-  source = "terraform-cisco-modules/policy-bundle/intersight"
+  source = "github.com/pl247/tf-intersight-policy-bundle"
 
   # external sources
   organization    = data.intersight_organization_organization.default.id
-  vnic_mac_pool   = var.mac_pool_moid
-  imc_access_pool = var.ip_pool_moid
 
   # every policy created will have this prefix in its name
   policy_prefix = "pdc"
-  description   = "Created by Terraform"
+  description   = "Built by Terraform"
 
   # Fabric Interconnect 6454 config specifics
   server_ports_6454 = [17, 18, 19, 20]
   port_channel_6454 = [49, 50]
   uplink_vlans_6454 = {
-    "vlan1020" : 1020,
-    "vlan1021" : 1021
+    "vlan-998" : 998,
+    "vlan-999" : 999
   }
 
   fc_port_count_6454 = 4
@@ -54,8 +52,14 @@ module "intersight_policy_bundle" {
 
   ntp_timezone = "America/Winnipeg"
 
-    tags = [
-    { "key" : "location", "value" : "Backup-DC" },
-    { "key" : "orchestrator", "value" : "terraform" }
+  # starting values for wwnn, wwpn-a/b and mac pools (size 255)
+  wwnn-block   = "20:00:00:CA:FE:00:00:01"
+  wwpn-a-block = "20:00:00:CA:FE:0A:00:01"
+  wwpn-b-block = "20:00:00:CA:FE:0B:00:01"
+  mac-block    = "00:CA:FE:00:00:01"
+
+  tags = [
+    { "key" : "Environment", "value" : "PDC-Prod" },
+    { "key" : "Orchestrator", "value" : "Terraform" }
   ]
 }

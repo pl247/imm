@@ -1,25 +1,17 @@
 
-Directions for using Terraform open source with IMM demo
---------------------------------------------
+# Creating servers in Intersight using Terraform open source
 
-Create a file called SecretKey.txt file and put your secret key generated from Intersight there (see api_key below).
+This simple terraform plan for Intersight creates the minimum required pools and policies so that it can also create a server profile template and a domain profile.
 
-Edit variables.tf file and change the following variables/MOIDs to match yours:
+To keep the code simple and compact, it references an Intersight policy bundle here:
+https://github.com/pl247/tf-intersight-policy-bundle
 
-organization - Your intersight account will have a default organization. One way to find the 
-organization is to go to Gear>Settings>Organizations> and click the default org. Get the MOID 
-of the default org from the URL. The MOID is 5ddeb24d6972652d3100cb82 if your URL is:
-https://intersight.com/an/settings/organizations/5ddeb24d6972652d3100cb82/
+The plan does not currently create a storage policy, so you will need to build that to your needs and reference it in your template.
 
-mac_pool_moid - Create a MAC pool in Intersight and get the MOID by clicking on the pool 
-in Intersight and copy the hex ID that comes after macpool. For example if this is the URL 
-of your MAC pool in intersight, then the MOID is 609edfa36962752d30ce1434:
-https://intersight.com/an/pool/pools/abstract/macpool/609edfa36962752d30ce1434/view/?$currentPage=1&$pageSize=10 
+### Directions
 
-ip_pool_moid - Create an IP pool in Intersight and get the MOID by clicking on the pool 
-in Intersight and copy the hex ID that comes after ippool. For example if this is the URL 
-of your IP pool in intersight, then the MOID is 60c3d28c6962752d30d3b964:
-https://intersight.com/an/pool/pools/abstract/ippool/60c3d28c6962752d30d3b964/view/?$currentPage=1&$pageSize=10
+1. Go into Intersight and generate an API key `Gear>Settings>API Keys>Generate API Key` (type version 2)
 
-api_key - Generate an API key in your intersight Gear>Settings>API Keys>Generate API Key using version 2. 
-After clicking Generate, you'll be presented with the API key and Secret Key. Put the Secret Key into the file SecretKey.txt
+2. Edit variables.tf file and change the `api_key` to that which you just generated in step 1
+
+3. Create a file called `SecretKey.txt` and put the secret key generated from Intersight inside it
