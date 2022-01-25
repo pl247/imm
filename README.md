@@ -8,7 +8,7 @@ https://github.com/pl247/tf-intersight-policy-bundle
 
 The plan does not currently create a storage policy, so you will need to build that to your needs and reference it in your template.
 
-### Directions to customize the code
+### Customize the code so it works for your Intersight
 
 1. Go into Intersight and generate an API key `Gear>Settings>API Keys>Generate API Key` (type version 2)
 
@@ -16,7 +16,9 @@ The plan does not currently create a storage policy, so you will need to build t
 
 3. Create a file called `SecretKey.txt` and put the secret key generated from Intersight inside it
 
-### Directions to run the code using Terraform
+4. Make changes to the `main.tf` as appropriate to reflect your 
+
+### Run the code using Terraform
 
 Execute your Terraform plan using the following commands:
    - terraform init
