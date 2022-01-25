@@ -24,3 +24,7 @@ Execute your Terraform plan using the following commands:
    - terraform init
    - terraform plan
    - terraform apply
+
+### Note about Terraform destroy
+
+Before attempting a `terraform destroy`, you will need to remove the profiles that are using the pools and policies. For example, delete the domain profile manually first and possibly any server profiles before issuing the destroy command.
