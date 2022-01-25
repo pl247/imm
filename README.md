@@ -28,3 +28,5 @@ Execute your Terraform plan using the following commands:
 ### Note about Terraform destroy
 
 Before attempting a `terraform destroy`, you will need to remove the profiles that are using the pools and policies. For example, delete the domain profile manually first and possibly any server profiles before issuing the destroy command.
+
+Also, if you wish to use Terraform Cloud for Business as opposed to the open source version, here is an exampe of that: https://github.com/pl247/imm-tfcb
