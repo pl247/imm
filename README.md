@@ -6,7 +6,7 @@ This simple terraform plan for Intersight creates the minimum required pools and
 To keep the code simple and compact, it references an Intersight policy bundle here:
 https://github.com/pl247/tf-intersight-policy-bundle
 
-The plan does not currently create a storage policy, so you will need to build that to your needs and reference it in your template.
+The plan does not currently create a storage policy, so you might need to build that to your needs and reference it in your template before deriving server profiles.
 
 ### Customize the code so it works for your Intersight
 
