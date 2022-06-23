@@ -12,11 +12,11 @@ The plan does not currently create a storage policy, so you might need to build 
 
 1. Go into Intersight and generate an API key `Gear>Settings>API Keys>Generate API Key` (type version 2)
 
-2. Edit variables.tf file and change the `api_key` to that which you just generated in step 1
+2. Edit variables.tf file and change the `api_key` default value to the API key ID which you just generated in step 1
 
 3. Create a file called `SecretKey.txt` and put the secret key generated from Intersight inside it
 
-4. Make changes to the `main.tf` as appropriate to reflect your 
+4. Make changes to the `main.tf` as appropriate to reflect your desired environment
 
 ### Run the code using Terraform
 
