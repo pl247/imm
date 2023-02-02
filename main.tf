@@ -29,11 +29,11 @@ module "intersight_policy_bundle" {
   organization    = data.intersight_organization_organization.default.id
 
   # every policy created will have this prefix in its name
-  policy_prefix = "pdc"
+  policy_prefix = "pod2"
   description   = "Built by Terraform"
 
   # Fabric Interconnect 6454 config specifics
-  server_ports_6454 = [17, 18, 19, 20]
+  server_ports_6454 = [17, 18, 19, 20, 21, 22]
   port_channel_6454 = [49, 50]
   uplink_vlans_6454 = {
     "vlan-998" : 998,
@@ -53,6 +53,9 @@ module "intersight_policy_bundle" {
   ntp_timezone = "America/Winnipeg"
 
   # starting values for wwnn, wwpn-a/b and mac pools (size 255)
+
+  san_id_a = 11
+  san_id_b = 12
   wwnn-block   = "20:00:00:CA:FE:00:00:01"
   wwpn-a-block = "20:00:00:CA:FE:0A:00:01"
   wwpn-b-block = "20:00:00:CA:FE:0B:00:01"
