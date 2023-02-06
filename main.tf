@@ -29,22 +29,18 @@ module "intersight_policy_bundle" {
   organization    = data.intersight_organization_organization.default.id
 
   # every policy created will have this prefix in its name
-  policy_prefix = "pod2"
+  policy_prefix = "pdc"
   description   = "Built by Terraform"
 
   # Fabric Interconnect 6454 config specifics
-  server_ports_6454 = [17, 18, 19, 20, 21, 22]
+  server_ports_6454 = [17, 18, 19, 20]
   port_channel_6454 = [49, 50]
 
-#  uplink_vlans_6454 = {
-#    "vlan-998" : 998,
-#    "vlan-999" : 999
-#  }
+  uplink_vlans_6454 = {
+    "vlan-998" : 998,
+    "vlan-999" : 999
+  }
 
-  # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
-  # vlan_prefix = "vlan"
-  #uplink_vlans_6454 = "10,11"
-  switch_vlans_6454 = "100,101,102,313,314,997-999"
 
   imc_access_vlan    = 998
   imc_admin_password = "Cisco123"
@@ -57,42 +53,12 @@ module "intersight_policy_bundle" {
   ntp_timezone = "America/Winnipeg"
 
   # starting values for wwnn, wwpn-a/b and mac pools (size 255)
-
   fc_port_count_6454 = 4
 
   # VSAN ID for FC Port Channel
   #fc_uplink_pc_vsan_id_a = 11
   #fc_uplink_pc_vsan_id_b = 12
 
-/*
-  # Fabric A VSAN Set
-  fabric_a_vsan_sets = {
-    "vsan11" = {
-      vsan_number   = 11
-      fcoe_number   = 11
-      switch_id      = "A"
-    }
-    "vsan110"  = {
-      vsan_number   = 110
-      fcoe_number   = 110
-      switch_id      = "A"
-    }
-  }
-
-  # Fabric B VSAN Set
-    fabric_b_vsan_sets = {
-    "vsan12" = {
-      vsan_number   = 12
-      fcoe_number   = 12
-      switch_id      = "B"
-    }
-    "vsan120"  = {
-      vsan_number   = 120
-      fcoe_number   = 120
-      switch_id      = "B"
-    }
-  }
-*/
 
   wwnn-block   = "20:00:00:CA:FE:00:00:01"
   wwpn-a-block = "20:00:00:CA:FE:0A:00:01"
