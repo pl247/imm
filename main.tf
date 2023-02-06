@@ -38,7 +38,7 @@ module "intersight_policy_bundle" {
 
   # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
   # vlan_prefix = "vlan"
-  switch_vlans_6536 = "10,11-15"
+  uplink_vlans_6454 = "10,11-15"
 
   imc_access_vlan    = 998
   imc_admin_password = "Cisco123"
