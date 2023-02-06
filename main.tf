@@ -36,9 +36,15 @@ module "intersight_policy_bundle" {
   server_ports_6454 = [17, 18, 19, 20, 21, 22]
   port_channel_6454 = [49, 50]
 
+#  uplink_vlans_6454 = {
+#    "vlan-998" : 998,
+#    "vlan-999" : 999
+#  }
+
   # Uplink VLANs Allowed List    Example: "5,6,7,8,100-130,998-1011"
   # vlan_prefix = "vlan"
-  uplink_vlans_6454 = "10,11-15"
+  #uplink_vlans_6454 = "10,11"
+  switch_vlans_6454 = "100,101,102,313,314,997-999"
 
   imc_access_vlan    = 998
   imc_admin_password = "Cisco123"
@@ -55,10 +61,10 @@ module "intersight_policy_bundle" {
   fc_port_count_6454 = 4
 
   # VSAN ID for FC Port Channel
-  fc_uplink_pc_vsan_id_a = 11
-  fc_uplink_pc_vsan_id_b = 12
+  #fc_uplink_pc_vsan_id_a = 11
+  #fc_uplink_pc_vsan_id_b = 12
 
-
+/*
   # Fabric A VSAN Set
   fabric_a_vsan_sets = {
     "vsan11" = {
@@ -86,6 +92,7 @@ module "intersight_policy_bundle" {
       switch_id      = "B"
     }
   }
+*/
 
   wwnn-block   = "20:00:00:CA:FE:00:00:01"
   wwpn-a-block = "20:00:00:CA:FE:0A:00:01"
