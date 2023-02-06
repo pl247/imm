@@ -29,7 +29,7 @@ module "intersight_policy_bundle" {
   organization    = data.intersight_organization_organization.default.id
 
   # every policy created will have this prefix in its name
-  policy_prefix = "pdc"
+  policy_prefix = "pod2"
   description   = "Built by Terraform"
 
   # Fabric Interconnect 6454 config specifics
@@ -54,11 +54,6 @@ module "intersight_policy_bundle" {
 
   # starting values for wwnn, wwpn-a/b and mac pools (size 255)
   fc_port_count_6454 = 4
-
-  # VSAN ID for FC Port Channel
-  #fc_uplink_pc_vsan_id_a = 11
-  #fc_uplink_pc_vsan_id_b = 12
-
 
   wwnn-block   = "20:00:00:CA:FE:00:00:01"
   wwpn-a-block = "20:00:00:CA:FE:0A:00:01"
